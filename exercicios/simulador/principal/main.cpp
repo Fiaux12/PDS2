@@ -29,7 +29,7 @@ int main()
     Personagem* p1 = new Clerigo(1, "Clerigo Eq1", 10, arma1, escudo1);
     Personagem* p2 = new Cavaleiro(1, "Cavaleiro Eq1", 10, arma2, escudo2);
     Personagem* p3 = new Elfo(1, "Elfo Eq1", 10, arma3, escudo3);
-    Personagem* p4 = new Anao(1, "Anao Eq1", 10, arma4, escudo4);
+    Personagem* p4 = new Anao(1, "Anao Eq1", 12, arma4, escudo4);
     Personagem* p5 = new Feiticeiro(1, "Feiticeiro Eq1", 10, arma5, escudo5);
 
     //Personagens Equipe 1
