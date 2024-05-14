@@ -75,18 +75,28 @@ Personagem* Simulador::proximoPersonagem(vector<Personagem*> equipe)
         return nullptr;
     }
 
-    int contador = 0;
-    while (contador < tamanho)
+    // Verifica se todos os personagens estão mortos
+    bool todosMortos = true;
+    for (int i = 0; i < tamanho; ++i)
     {
-        if (equipe[contador]->getVida()>0)
+        if (equipe[i]->getVida() > 0)
         {
-            return equipe[contador];
+            todosMortos = false;
+            break;
         }
-        contador++;
-
     }
 
-    return nullptr;
+    if (todosMortos)
+        return nullptr;
+
+    int indiceAleatorio;
+    do {
+        // Gera um indice aleatório dentro do intervalo
+        // A semente já foi iniciada na função "iniciarSimulacao()"
+        indiceAleatorio = rand() % tamanho;
+    } while (equipe[indiceAleatorio]->getVida() <= 0); 
+
+    return equipe[indiceAleatorio];
 }
 
 int Simulador::criarCombate(Personagem* personagem1, Personagem* personagem2)
@@ -117,7 +127,7 @@ string Simulador::criarSaida(Personagem* personagem1, Personagem* personagem2, i
 
 void Simulador::iniciarSimulacao()
 {
-     // Define a semente baseada na hora atual
+    // Define a semente baseada na hora atual
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
     int dano = 0;
     Personagem* personagemAtacante;
@@ -129,12 +139,14 @@ void Simulador::iniciarSimulacao()
         if (equipeQueAtaca == 1)
         {
             personagemAtacante = proximoPersonagem(equipe1);
+            std::srand(static_cast<unsigned int>(std::time(nullptr)));
             personagemDefesa = proximoPersonagem(equipe2);
         }
 
         if (equipeQueAtaca == 2)
         {
             personagemAtacante = proximoPersonagem(equipe2);
+            std::srand(static_cast<unsigned int>(std::time(nullptr)));
             personagemDefesa = proximoPersonagem(equipe1);
         }
 

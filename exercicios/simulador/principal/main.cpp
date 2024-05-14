@@ -26,18 +26,18 @@ int main()
     ArmaDefesa* escudo5 = new PergaminhoDeProtecao("Pergaminho De Protecao De Jade", 8);
     
     //Personagens Equipe 1
-    Personagem* p1 = new Clerigo(1, "Clerigo Eq1", 30, arma1, escudo1);
+    Personagem* p1 = new Clerigo(1, "Clerigo Eq1", 10, arma1, escudo1);
     Personagem* p2 = new Cavaleiro(1, "Cavaleiro Eq1", 10, arma2, escudo2);
     Personagem* p3 = new Elfo(1, "Elfo Eq1", 10, arma3, escudo3);
     Personagem* p4 = new Anao(1, "Anao Eq1", 10, arma4, escudo4);
     Personagem* p5 = new Feiticeiro(1, "Feiticeiro Eq1", 10, arma5, escudo5);
 
     //Personagens Equipe 1
-    Personagem* p6 = new Clerigo(1, "Clerigo Eq2", 20, arma1, escudo1);
-    Personagem* p7 = new Cavaleiro(1, "Cavaleiro Eq2", 20, arma2, escudo2);
-    Personagem* p8 = new Elfo(1, "Elfo Eq2", 20, arma3, escudo3);
-    Personagem* p9 = new Anao(1, "Anao Eq2", 20, arma4, escudo4);
-    Personagem* p10 = new Feiticeiro(1, "Feiticeiro Eq2", 20, arma5, escudo5);
+    Personagem* p6 = new Clerigo(1, "Clerigo Eq2", 10, arma1, escudo1);
+    Personagem* p7 = new Cavaleiro(1, "Cavaleiro Eq2", 10, arma2, escudo2);
+    Personagem* p8 = new Elfo(1, "Elfo Eq2", 10, arma3, escudo3);
+    Personagem* p9 = new Anao(1, "Anao Eq2", 10, arma4, escudo4);
+    Personagem* p10 = new Feiticeiro(1, "Feiticeiro Eq2", 10, arma5, escudo5);
 
     Simulador* simulador = new Simulador();
     simulador->adicionarPersonagem(p1, 1);
